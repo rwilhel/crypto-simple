@@ -16,7 +16,7 @@
     <div class="row">
       <div class="jumbotron col-xs-offset-2 col-xs-8">
         <p>
-          A quick and easy way to get the top 10 cryptocurrencies by market cap!
+          A quick and easy way to get the top 20 cryptocurrencies by market cap!
         </p>
       </div>
     </div>
@@ -33,13 +33,12 @@
             <td>1D</td>
             <td>1W</td>
             <td>Market Cap[USD]</td>
-          </tr>
         </thead>
         <tbody>
-          <tr v-for='coin in coins'>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr v-cloak v-for='coin in coins'>
+            <td>{{ coin.rank }}</td>
+            <td>{{ coin.name }}</td>
+            <td>{{ coin.symbol }}</td>
             <td></td>
             <td>
               <span v-if='coin.percent_change_1h > 0'>+</span>%

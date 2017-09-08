@@ -7,7 +7,7 @@ let app = new Vue ({
     coins: []
   },
   methods: {
-    getCoins: () => {
+    getCoins: function() {
       let self = this;
 
       axios.get(coinMarketApi + '/v1/ticker/?limit=20')
@@ -17,16 +17,17 @@ let app = new Vue ({
       .catch((err) => {
         console.error(err)
       })
-    }
-  }
-  created: () => {
+    },
+    getColor: (num) => {
+      return num > 0 ? 'color: green;' : 'color:red;'
+    },
+  },
+
+  created: function() {
     this.getCoins()
-  }
-  getColor: (num) => {
-    return num > 0 ? 'color: green' : 'color:red'
   }
 })
 
-setInterval(() => {
+setInterval( () => {
   app.getCoins()
 }, update_interval)

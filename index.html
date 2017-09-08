@@ -50,7 +50,7 @@
             <td v-bind:style="getColor(coin.percent_change_7d)">
               <span v-if='coin.percent_change_7d > 0'>+</span>{{ coin.percent_change_7d }}%
             </td>
-            <td></td>
+            <td>{{ coin.market_cap_usd | currency }}</td>
           </tr>
         </tbody>
       </table>

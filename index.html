@@ -40,8 +40,8 @@
             <td>{{ coin.name }}</td>
             <td>{{ coin.symbol }}</td>
             <td>{{ coin.price_usd | currency }}</td>
-            <td>
-              <span v-if='coin.percent_change_1h > 0'>+</span>%
+            <td v-bind:style="getColor(coin.percent_change_1h)">
+              <span v-if='coin.percent_change_1h > 0'>+</span>{{ coin.percent_change_1h }}%
             </td>
             <td>
               <span v-if='coin.percent_change_24h > 0'>+</span>%

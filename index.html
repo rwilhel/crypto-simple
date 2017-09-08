@@ -43,8 +43,8 @@
             <td v-bind:style="getColor(coin.percent_change_1h)">
               <span v-if='coin.percent_change_1h > 0'>+</span>{{ coin.percent_change_1h }}%
             </td>
-            <td>
-              <span v-if='coin.percent_change_24h > 0'>+</span>%
+            <td v-bind:style="getColor(coin.percent_change_24h)">
+              <span v-if='coin.percent_change_24h > 0'>+</span>{{ coin.percent_change_24h }}%
             </td>
             <td></td>
           </tr>

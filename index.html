@@ -33,6 +33,7 @@
             <td>1D</td>
             <td>1W</td>
             <td>Market Cap[USD]</td>
+          </tr>
         </thead>
         <tbody>
           <tr v-cloak v-for='coin in coins'>
@@ -45,6 +46,9 @@
             </td>
             <td v-bind:style="getColor(coin.percent_change_24h)">
               <span v-if='coin.percent_change_24h > 0'>+</span>{{ coin.percent_change_24h }}%
+            </td>
+            <td v-bind:style="getColor(coin.percent_change_7d)">
+              <span v-if='coin.percent_change_7d > 0'>+</span>{{ coin.percent_change_7d }}%
             </td>
             <td></td>
           </tr>

@@ -10,7 +10,7 @@ let app = new Vue ({
     getCoins: function() {
       let self = this;
 
-      axios.get(coinMarketApi + '/v1/ticker/?limit=20')
+      axios.get(coinMarketApi + '/v1/ticker/?limit=500')
       .then((response) => {
         this.coins = response.data
       })

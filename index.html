@@ -39,7 +39,7 @@
             <td>{{ coin.rank }}</td>
             <td>{{ coin.name }}</td>
             <td>{{ coin.symbol }}</td>
-            <td></td>
+            <td>{{ coin.price_usd | currency }}</td>
             <td>
               <span v-if='coin.percent_change_1h > 0'>+</span>%
             </td>
